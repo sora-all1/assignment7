@@ -12,6 +12,16 @@
 </div>
 
 <%= form_with(model: @reservation, url: reservations_path) do |form| %>
+  <% if @reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @reservation.errors.count %>件のエラーにより予約できませんでした</h2>
+      <ul>
+        <% @reservation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= form.hidden_field :room_id, value: @room.id %>
   <% if user_signed_in? %>
   <%= form.hidden_field :user_id, value: current_user.id %>
@@ -19,12 +29,12 @@
   <%= form.hidden_field :total_price, value: @room.price %>
   <div class="field">
     <%= form.label :check_in, "チェックイン" %>
-    <%= form.date_field :check_in %>
+    <%= form.date_field :check_in, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :check_out, "チェックアウト" %>
-    <%= form.date_field :check_out %>
+    <%= form.date_field :check_out, required: true %>
   </div>
 
   <div class="field">

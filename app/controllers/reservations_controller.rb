@@ -13,6 +13,7 @@ class ReservationsController < ApplicationController
       session[:reservation_data] = @reservation.attributes # データをセッションに保持
       redirect_to confirmation_reservations_path
     else
+      @q = Room.ransack(params[:q])
       render "rooms/show"
     end
   end

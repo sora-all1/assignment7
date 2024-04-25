@@ -60,3 +60,5 @@ gem 'devise'
 gem 'carrierwave'
 
 gem 'ransack'
+
+gem 'rails-i18n'

@@ -1,14 +1,14 @@
 <header class="header">
   <div>
-    <%= link_to 'Potepan Share', root_path %></li>
+    <%= link_to image_tag("logo.png", class:"header_logo"), root_path %>
   </div>
   <nav>
     <ul>
       <% if user_signed_in? %>
         <div class="mypage-btn-container" id="mypageBtnContainer">
           <div class="btn btn-lg mx-3" aria-expanded="false" id="btn">
-            <%= image_tag image_or_default_url(current_user.avatar) %>
-            <span><%= current_user.name %></span>
+            <%= image_tag image_or_default_url(current_user.avatar),  class: "avatar"  %>
+            <span class="name"><%= current_user.name %></span>
           </div>
           <div class="mypage-dropdown" id="mypageDropdown">
             <ul>
