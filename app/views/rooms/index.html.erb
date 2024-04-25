@@ -1,0 +1,37 @@
+<%= render 'shared/header' %>
+
+<h2>
+  Potepan Shareで<br>
+  まだ体験したことのない<br>
+  旅をしよう
+</h2>
+
+<%= search_form_for @q, url: search_rooms_path do |f| %>
+  <%= f.label :address_cont, "エリア検索"  , placeholder: "エリア名を入力" %>
+  <%= f.search_field :address_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+<h2>
+  おすすめのエリア
+</h2>
+<a href="http://localhost:3000/rooms/search?q%5Baddress_cont%5D=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2">
+<span>
+  東京
+</span>
+</a>
+<a href="http://localhost:3000/rooms/search?q%5Baddress_cont%5D=%E5%A4%A7%E9%98%AA&commit=%E6%A4%9C%E7%B4%A2">
+<span>
+  大阪
+</span>
+</a>
+<a href="http://localhost:3000/rooms/search?q%5Baddress_cont%5D=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2">
+<span>
+  京都
+</span>
+</a>
+<a href="http://localhost:3000/rooms/search?q%5Baddress_cont%5D=%E6%9C%AD%E5%B9%8C&commit=%E6%A4%9C%E7%B4%A2">
+<span>
+  札幌
+</span>
+</a>

@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+
+ .header{
+  display:flex;
+  justify-content:space-between;
+ }
+
+ .mypage-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 0px;
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+
+.mypage-btn-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.mypage-btn-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn{
+  list-style: none;
+  padding: 1px 12px;
+}
+
+.mypage-dropdown a {
+  text-decoration: none;
+}
+

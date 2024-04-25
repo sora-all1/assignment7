@@ -1,0 +1,13 @@
+<%= render 'shared/header' %>
+<h2>設定</h2>
+<ul>
+  <li><%= link_to 'アカウント',  account_users_path %></li>
+  <li><%= link_to 'プロフィール',  profile_users_path %></li>
+</ul>
+<h3>アカウント</h3>
+<%= link_to "編集", edit_profile_users_path %>
+<div>
+  <p><strong>アイコン画像</strong><%= image_tag image_or_default_url(@user.avatar) %></p>
+  <p><strong>名前</strong><%= @user.name %></p>
+  <p><strong>自己紹介</strong><%= @user.introduction %></p>
+</div>

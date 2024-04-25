@@ -1,0 +1,29 @@
+<header class="header">
+  <div>
+    <%= link_to 'Potepan Share', root_path %></li>
+  </div>
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <div class="mypage-btn-container" id="mypageBtnContainer">
+          <div class="btn btn-lg mx-3" aria-expanded="false" id="btn">
+            <%= image_tag image_or_default_url(current_user.avatar) %>
+            <span><%= current_user.name %></span>
+          </div>
+          <div class="mypage-dropdown" id="mypageDropdown">
+            <ul>
+              <li><%= link_to '施設の新規登録',  new_room_path %></li>
+              <li><%= link_to '予約済み一覧',  reservations_path %></li>
+              <li><%= link_to '登録済み一覧',  own_rooms_path %></li>
+              <li><%= link_to 'アカウント設定', account_users_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :get %></li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <li><%= link_to 'ログイン',   new_user_session_path %></li>
+        <li><%= link_to '新規登録',  new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

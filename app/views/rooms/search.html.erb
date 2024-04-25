@@ -1,0 +1,14 @@
+<%= render 'shared/header' %>
+<%= render 'shared/search' %>
+<%= @count %>件
+
+<% @rooms.each do |room| %>
+  <div>
+    <%= image_tag 'hotel.png' %>
+    <h2><%= room.name %></h2>
+    <p><%= room.address %></p>
+    <p><%= room.detail %></p>
+    <p><%= room.price %></p>
+    <%= link_to "詳細はこちら", room %>
+  </div>
+<% end %>
