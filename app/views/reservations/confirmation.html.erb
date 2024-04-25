@@ -1,0 +1,15 @@
+<%= render 'shared/header' %>
+
+<h1>予約確認</h1>
+
+<div>
+  <p>チェックイン: <%= @reservation_data["check_in"] %></p>
+  <p>チェックアウト: <%= @reservation_data["check_out"] %></p>
+  <p>日数: <%= @num_of_nights %></p> 
+  <p>人数: <%= @reservation_data["num_of_guests"] %></p>
+  <p>支払い金額: <%= @reservation_data["total_price"] %>円</p> 
+</div>
+<%= form_with(url: confirm_reservations_path, method: :post) do |form| %>
+  <%= form.submit "確定する" %>
+  <%= link_to "キャンセル", :back %>
+<% end %>

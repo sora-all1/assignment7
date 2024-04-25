@@ -1,0 +1,19 @@
+<%= render 'shared/header' %>
+<%= form_with model: @user, local: true, multipart: true do |f| %>
+  <div>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div>
+    <%= f.label :name, "名前"%>
+    <span class="required">*</span>
+    <%= f.text_field  :name %>
+  </div>
+  <div>
+    <%= f.label :introduction, "自己紹介"%>
+    <span class="required">*</span>
+    <%= f.text_area :introduction, placeholder: "自己紹介を入力" %>
+  </div>
+  <%= f.submit "保存" %>
+  <%= link_to 'キャンセル',  profile_users_path %>
+<% end %>

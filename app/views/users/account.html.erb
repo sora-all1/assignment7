@@ -1,0 +1,10 @@
+<%= render 'shared/header' %>
+<h2>設定</h2>
+<ul>
+  <li><%= link_to 'アカウント',  account_users_path %></li>
+  <li><%= link_to 'プロフィール',  profile_users_path %></li>
+</ul>
+<h3>アカウント</h3>
+<%= link_to "編集", edit_user_registration_path %>
+<p><strong>メールアドレス</strong> <%= @user.email %></p>
+<p><strong>パスワード</strong> ********* </p>
